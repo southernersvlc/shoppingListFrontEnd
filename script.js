@@ -39,11 +39,8 @@ async function checkedItem(itemId) {
     if (item.id == itemId) {
       item.isBought = !item.isBought;
       await putItemFromApi(itemId);
-      console.log(itemId);
-      console.log(item);
     }
   }
-  //items = await fecthDataFromAPI();
 
   printList();
 }
@@ -71,7 +68,6 @@ async function addItemToList() {
   const newItemName = inputDOM.value.trim();
   inputDOM.value = "";
 
-  //Guard
   if (!newItemName) {
     alert("debes introducir algo");
     return;
@@ -98,7 +94,6 @@ async function addItemToList() {
   printList();
 }
 
-//Función principal - Aquí empieza la aplicación
 async function main() {
   items = await fecthDataFromAPI();
   printList();
