@@ -37,8 +37,8 @@ function printList() {
 async function checkedItem(itemId) {
   for (let item of items) {
     if (item.id == itemId) {
-      item.isBought = !item.isBought;
-      await putItemFromApi(itemId, item);
+    //  item.isBought = !item.isBought;
+      await putItemFromApi(itemId);
       console.log(itemId);
       console.log(item);
     }

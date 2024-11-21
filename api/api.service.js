@@ -1,13 +1,13 @@
-const BASE_API = "https://6710ec08a85f4164ef2ff611.mockapi.io/api/apiLista";
+const BASE_API = "http://localhost:8080";
 //getAll
 export async function fecthDataFromAPI() {
-  const response = await fetch(BASE_API + "/items");
+  const response = await fetch(BASE_API + "/products");
   return await response.json();
 }
 
 //post
 export async function postItemToApi(item) {
-  const response = await fetch(BASE_API + "/items", {
+  const response = await fetch(BASE_API + "/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,18 +18,14 @@ export async function postItemToApi(item) {
 
 //delete
 export async function deleteItemFromApi(itemId) {
-  const response = await fetch(BASE_API + "/items/" + itemId, {
+  const response = await fetch(BASE_API + "/products/" + itemId, {
     method: "DELETE",
   });
 }
 
 //put
-export async function putItemFromApi(itemId, item) {
-  const response = await fetch(BASE_API + "/items/" + itemId, {
+export async function putItemFromApi(itemId) {
+  const response = await fetch(BASE_API + "/products/" + itemId, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(item),
   });
 }
